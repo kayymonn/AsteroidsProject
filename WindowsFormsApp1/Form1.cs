@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace WindowsFormsApp1
 {
+
+
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -21,16 +27,42 @@ namespace WindowsFormsApp1
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+            private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (Keyboard.IsKeyDown(Key.Up))
+                Proccess (Keys.Up);
+            if (Keyboard.IsKeyDown(Key.Down))
+                Proccess(Keys.Down);
+            if (Keyboard.IsKeyDown(Key.Left))
+                Proccess(Keys.Left);
+            if (Keyboard.IsKeyDown(Key.Right))
+                Proccess(Keys.Right);
+
+
+
+            MoveMeteorit(meteorit1,5);
+            MoveMeteorit(meteorit2,3);
+            MoveMeteorit(meteorit3,6);
+
+
+        }
+        
+        private void Proccess (Keys keyData)
+        {
             int movement = 10;
 
             System.Diagnostics.Debug.WriteLine(player.Left.ToString());
 
             if (keyData == Keys.Up)
             {
-                if (player.Top < -player.Height +25)
+                if (player.Top < -player.Height + 25)
                     player.Top = this.Height - player.Height + 25;
                 else
-                    player.Top = player.Top -movement;
+                    player.Top = player.Top - movement;
 
             }
             if (keyData == Keys.Left)
@@ -38,7 +70,7 @@ namespace WindowsFormsApp1
                 if (player.Left < -50)
                     player.Left = this.Width;
                 else
-                    player.Left = player.Left -movement;
+                    player.Left = player.Left - movement;
 
             }
             if (keyData == Keys.Right)
@@ -46,48 +78,15 @@ namespace WindowsFormsApp1
                 if (player.Left > 580)
                     player.Left = -50;
                 else
-                    player.Left = player.Left +movement;
+                    player.Left = player.Left + movement;
             }
             if (keyData == Keys.Down)
             {
-                if (player.Top > this.Height -player.Height +17 )
+                if (player.Top > this.Height - player.Height + 17)
                     player.Top = -player.Height;
                 else
-                    player.Top = player.Top +movement;
+                    player.Top = player.Top + movement;
             }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-        static void Main()
-        {
-            while (true)
-            {
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-
-                    // Check the key that was pressed
-                    if (keyInfo.Key == ConsoleKey.Escape)
-                    {
-                        // Exit the loop if the Escape key is pressed
-                        break;
-                    }
-                    else
-                    {
-                        // Print the key that was pressed
-                        Console.WriteLine("Key pressed: " + keyInfo.Key);
-                    }
-                }
-
-                // Perform other game logic or actions
-            }
-            private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            MoveMeteorit(meteorit1,5);
-            MoveMeteorit(meteorit2,3);
-            MoveMeteorit(meteorit3,6);
-
-
         }
 
         private void MoveMeteorit(PictureBox pictureBox,int speed)
@@ -100,9 +99,6 @@ namespace WindowsFormsApp1
 
 
         }
-    
-    
-    FDHBUIIIIPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPABDCNAIOBXNVCIOABDUIFCBAOSDBCYUAD
     
     
     }
