@@ -57,8 +57,30 @@ namespace WindowsFormsApp1
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+        static void Main()
+        {
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
-        private void timer1_Tick(object sender, EventArgs e)
+                    // Check the key that was pressed
+                    if (keyInfo.Key == ConsoleKey.Escape)
+                    {
+                        // Exit the loop if the Escape key is pressed
+                        break;
+                    }
+                    else
+                    {
+                        // Print the key that was pressed
+                        Console.WriteLine("Key pressed: " + keyInfo.Key);
+                    }
+                }
+
+                // Perform other game logic or actions
+            }
+            private void timer1_Tick(object sender, EventArgs e)
         {
 
             MoveMeteorit(meteorit1,5);
