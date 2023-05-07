@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            timer1.Start();
+            timer1.Start(); 
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
