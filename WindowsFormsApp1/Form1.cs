@@ -87,19 +87,23 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void MoveMeteorit(PictureBox pictureBox,int speed)
+        //new code
+        private Random random = new Random();
+
+        private void MoveMeteorit(PictureBox pictureBox, int speed)
         {
             if (pictureBox.Top > this.Height - pictureBox.Height + 17)
-                pictureBox.Top = -pictureBox.Height;
+            {
+                // Reset the position of the meteorite to a new horizontal position
+                int newX = random.Next(this.Width - pictureBox.Width);
+                pictureBox.Location = new Point(newX, -pictureBox.Height);
+            }
             else
-                pictureBox.Top = pictureBox.Top +speed;
-
-
-
+            {
+                pictureBox.Top += speed;
+            }
         }
-        //new code
-        private void Random random = new Random();
-        //new code
+
         private void CheckCollisions()
         {
             if (player.Bounds.IntersectsWith(meteorit1.Bounds) ||
