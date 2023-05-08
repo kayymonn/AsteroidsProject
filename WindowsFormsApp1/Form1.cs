@@ -42,12 +42,11 @@ namespace WindowsFormsApp1
             if (Keyboard.IsKeyDown(Key.Right))
                 Proccess(Keys.Right);
 
-
-
             MoveMeteorit(meteorit1,5);
             MoveMeteorit(meteorit2,3);
             MoveMeteorit(meteorit3,6);
 
+            CheckCollisions();
         }
         
         private void Proccess (Keys keyData)
@@ -98,7 +97,7 @@ namespace WindowsFormsApp1
 
 
         }
-        private void CcheckCollisions()
+        private void CheckCollisions()
         {
             if (player.Bounds.IntersectsWith(meteorit1.Bounds))
             {
