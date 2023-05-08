@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         {
 
             if (Keyboard.IsKeyDown(Key.Up))
-                Proccess (Keys.Up);
+                Proccess(Keys.Up);
             if (Keyboard.IsKeyDown(Key.Down))
                 Proccess(Keys.Down);
             if (Keyboard.IsKeyDown(Key.Left))
@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
         {
             if (player.Bounds.IntersectsWith(meteorit1.Bounds) ||
                 player.Bounds.IntersectsWith(meteorit2.Bounds) ||
-                player.Bounds.IntersectsWith(meteorit2.Bounds))
+                player.Bounds.IntersectsWith(meteorit3.Bounds))
             {
                 Application.Exit();
             }
