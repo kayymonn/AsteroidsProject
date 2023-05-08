@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
             MoveMeteorit(meteorit2,3);
             MoveMeteorit(meteorit3,6);
 
-
         }
         
         private void Proccess (Keys keyData)
@@ -98,6 +97,23 @@ namespace WindowsFormsApp1
 
 
 
+        }
+        private void CcheckCollisions()
+        {
+            if (player.Bounds.IntersectsWith(meteorit1.Bounds))
+            {
+                Console.WriteLine("GameOver");
+            }
+            
+            if (player.Bounds.IntersectsWith(meteorit2.Bounds))
+            {
+                Console.WriteLine("GameOver");
+            }
+            
+            if (player.Bounds.IntersectsWith(meteorit3.Bounds))
+            {
+                Console.WriteLine("GameOver");
+            }
         }
     
     
