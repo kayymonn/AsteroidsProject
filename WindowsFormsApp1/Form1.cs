@@ -99,17 +99,9 @@ namespace WindowsFormsApp1
         }
         private void CheckCollisions()
         {
-            if (player.Bounds.IntersectsWith(meteorit1.Bounds))
-            {
-                //insert code here
-            }
-            
-            if (player.Bounds.IntersectsWith(meteorit2.Bounds))
-            {
-                //insert code here
-            }
-
-            if (player.Bounds.IntersectsWith(meteorit3.Bounds))
+            if (player.Bounds.IntersectsWith(meteorit1.Bounds) ||
+                player.Bounds.IntersectsWith(meteorit2.Bounds) ||
+                player.Bounds.IntersectsWith(meteorit2.Bounds))
             {
                 //insert code here
             }
