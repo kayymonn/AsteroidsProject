@@ -87,14 +87,12 @@ namespace WindowsFormsApp1
             }
         }
 
-        //new code
         private Random random = new Random();
 
         private void MoveMeteorit(PictureBox pictureBox, int speed)
         {
             if (pictureBox.Top > this.Height - pictureBox.Height + 17)
             {
-                // Reset the position of the meteorite to a new horizontal position
                 int newX = random.Next(this.Width - pictureBox.Width);
                 pictureBox.Location = new Point(newX, -pictureBox.Height);
             }
@@ -110,7 +108,7 @@ namespace WindowsFormsApp1
                 player.Bounds.IntersectsWith(meteorit2.Bounds) ||
                 player.Bounds.IntersectsWith(meteorit3.Bounds))
             {
-                Application.Exit();
+                //insert game over screen here
             }
         }
     
