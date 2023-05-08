@@ -97,6 +97,9 @@ namespace WindowsFormsApp1
 
 
         }
+        //new code
+        private void Random random = new Random();
+        //new code
         private void CheckCollisions()
         {
             if (player.Bounds.IntersectsWith(meteorit1.Bounds) ||
