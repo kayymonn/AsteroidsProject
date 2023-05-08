@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
                 player.Bounds.IntersectsWith(meteorit2.Bounds) ||
                 player.Bounds.IntersectsWith(meteorit2.Bounds))
             {
-                //insert code here
+                Application.Exit();
             }
         }
     
