@@ -101,17 +101,17 @@ namespace WindowsFormsApp1
         {
             if (player.Bounds.IntersectsWith(meteorit1.Bounds))
             {
-                
+                //insert code here
             }
             
             if (player.Bounds.IntersectsWith(meteorit2.Bounds))
             {
-                
+                //insert code here
             }
-            
+
             if (player.Bounds.IntersectsWith(meteorit3.Bounds))
             {
-                
+                //insert code here
             }
         }
     
