@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
 
+        uint Counter = 0;
+        uint MaxCollisions = 10;
+        PictureBox LastCollisionMeteorit = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -112,12 +116,37 @@ namespace WindowsFormsApp1
 
         private void CheckCollisions()
         {
-            if (player.Bounds.IntersectsWith(meteorit1.Bounds) ||
-                player.Bounds.IntersectsWith(meteorit2.Bounds) ||
-                player.Bounds.IntersectsWith(meteorit3.Bounds))
+            PictureBox foundmeteorit = FindCollidingObject();
+
+            // collision positive
+            if (foundmeteorit != null)
             {
-                Application.Exit();  //insert game over screen here
+                if (LastCollisionMeteorit == null)
+                {
+                    Counter = Counter + 1;
+                    CollisionCounter.Text = Counter.ToString();
+                    LastCollisionMeteorit = foundmeteorit;
+                } 
+
+            }
+            // collision negative
+            else
+            {
+                LastCollisionMeteorit = null;
             }
         }
+
+        private PictureBox FindCollidingObject()
+        {
+            if (player.Bounds.IntersectsWith(meteorit1.Bounds))
+                return meteorit1;
+            if (player.Bounds.IntersectsWith(meteorit2.Bounds))
+                return meteorit2;
+            if (player.Bounds.IntersectsWith(meteorit3.Bounds))
+                return meteorit3;
+
+            return null;
+        }
+
     }
 }
