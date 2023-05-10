@@ -42,9 +42,11 @@ namespace WindowsFormsApp1
             if (Keyboard.IsKeyDown(Key.Right))
                 Proccess(Keys.Right);
 
-            MoveMeteorit(meteorit1,5);
-            MoveMeteorit(meteorit2,3);
-            MoveMeteorit(meteorit3,6);
+            int newSpeed = random1.Next(1, 6);
+
+            MoveMeteorit(meteorit1);
+            MoveMeteorit(meteorit2);
+            MoveMeteorit(meteorit3);
 
             CheckCollisions();
         }
@@ -89,15 +91,21 @@ namespace WindowsFormsApp1
 
         private Random random = new Random();
 
-        private void MoveMeteorit(PictureBox pictureBox, int speed)
+        private Random random1 = new Random();
+
+        private void MoveMeteorit(PictureBox pictureBox)
         {
-            if (pictureBox.Top > this.Height - pictureBox.Height + 17)
+            int maxY = this.Height - pictureBox.Height + 17;
+            if (pictureBox.Top > maxY)
             {
                 int newX = random.Next(this.Width - pictureBox.Width);
+                int newSpeed = random1.Next(1, 6);
                 pictureBox.Location = new Point(newX, -pictureBox.Height);
+                pictureBox.Tag = newSpeed;
             }
             else
             {
+                int speed = Convert.ToInt32(pictureBox.Tag);
                 pictureBox.Top += speed;
             }
         }
@@ -108,11 +116,8 @@ namespace WindowsFormsApp1
                 player.Bounds.IntersectsWith(meteorit2.Bounds) ||
                 player.Bounds.IntersectsWith(meteorit3.Bounds))
             {
-                //insert game over screen here
+                Application.Exit();  //insert game over screen here
             }
         }
-    
-    
     }
-
 }
