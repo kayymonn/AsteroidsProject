@@ -138,9 +138,9 @@ namespace WindowsFormsApp1
             }
 
             // check max collision limit
-            if (LastCollisionMeteorit != null)
+            if (Counter>MaxCollisions)
             {
-
+              
             }
         }
 

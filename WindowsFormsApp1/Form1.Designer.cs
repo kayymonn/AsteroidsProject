@@ -58,7 +58,7 @@
             // 
             // meteorit3
             // 
-            this.meteorit3.Image = global::WindowsFormsApp1.Properties.Resources.donut_PNG93;
+            this.meteorit3.Image = global::WindowsFormsApp1.Properties.Resources.Asteroid_03;
             this.meteorit3.Location = new System.Drawing.Point(114, 12);
             this.meteorit3.Name = "meteorit3";
             this.meteorit3.Size = new System.Drawing.Size(110, 89);
@@ -69,7 +69,7 @@
             // 
             // meteorit2
             // 
-            this.meteorit2.Image = global::WindowsFormsApp1.Properties.Resources.donut_PNG93;
+            this.meteorit2.Image = global::WindowsFormsApp1.Properties.Resources.Asteroid_02;
             this.meteorit2.Location = new System.Drawing.Point(652, 12);
             this.meteorit2.Name = "meteorit2";
             this.meteorit2.Size = new System.Drawing.Size(110, 89);
@@ -80,7 +80,7 @@
             // 
             // meteorit1
             // 
-            this.meteorit1.Image = global::WindowsFormsApp1.Properties.Resources.donut_PNG93;
+            this.meteorit1.Image = global::WindowsFormsApp1.Properties.Resources.Asteroid_01;
             this.meteorit1.Location = new System.Drawing.Point(380, 12);
             this.meteorit1.Name = "meteorit1";
             this.meteorit1.Size = new System.Drawing.Size(110, 89);
