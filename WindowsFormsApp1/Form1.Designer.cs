@@ -34,7 +34,8 @@
             this.meteorit3 = new System.Windows.Forms.PictureBox();
             this.meteorit2 = new System.Windows.Forms.PictureBox();
             this.meteorit1 = new System.Windows.Forms.PictureBox();
-            this.CollisionCounter = new System.Windows.Forms.TextBox();
+            this.lblCollisionCounter = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.meteorit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meteorit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meteorit1)).BeginInit();
@@ -89,17 +90,25 @@
             this.meteorit1.TabStop = false;
             this.meteorit1.Tag = 2;
             // 
-            // CollisionCounter
+            // lblCollisionCounter
             // 
-            this.CollisionCounter.BackColor = System.Drawing.SystemColors.InfoText;
-            this.CollisionCounter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CollisionCounter.ForeColor = System.Drawing.SystemColors.Window;
-            this.CollisionCounter.Location = new System.Drawing.Point(719, 535);
-            this.CollisionCounter.Name = "CollisionCounter";
-            this.CollisionCounter.ReadOnly = true;
-            this.CollisionCounter.Size = new System.Drawing.Size(148, 19);
-            this.CollisionCounter.TabIndex = 4;
-            this.CollisionCounter.Text = "000";
+            this.lblCollisionCounter.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lblCollisionCounter.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblCollisionCounter.Location = new System.Drawing.Point(719, 9);
+            this.lblCollisionCounter.Name = "lblCollisionCounter";
+            this.lblCollisionCounter.Size = new System.Drawing.Size(148, 19);
+            this.lblCollisionCounter.TabIndex = 4;
+            this.lblCollisionCounter.Text = "0";
+            // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lblTime.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTime.Location = new System.Drawing.Point(719, 37);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(148, 19);
+            this.lblTime.TabIndex = 5;
+            this.lblTime.Text = "00:00";
             // 
             // Form1
             // 
@@ -108,7 +117,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(879, 566);
             this.ControlBox = false;
-            this.Controls.Add(this.CollisionCounter);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblCollisionCounter);
             this.Controls.Add(this.meteorit3);
             this.Controls.Add(this.meteorit2);
             this.Controls.Add(this.meteorit1);
@@ -122,7 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.meteorit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meteorit1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,7 +141,8 @@
         private System.Windows.Forms.PictureBox meteorit3;
         private System.Windows.Forms.PictureBox meteorit2;
         private System.Windows.Forms.PictureBox meteorit1;
-        private System.Windows.Forms.TextBox CollisionCounter;
+        private System.Windows.Forms.Label lblCollisionCounter;
+        private System.Windows.Forms.Label lblTime;
     }
 }
 

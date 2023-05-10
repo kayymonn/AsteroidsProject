@@ -19,14 +19,25 @@ namespace WindowsFormsApp1
     {
 
         uint Counter = 0;
-        uint MaxCollisions = 10;
+        uint MaxCollisions = 3;
         PictureBox LastCollisionMeteorit = null;
+        DateTime StartTime = DateTime.Now;
 
         public Form1()
         {
             InitializeComponent();
+         
+            PrepareStart();
+           
+        }
 
-            timer1.Start(); 
+        private void PrepareStart()
+        {
+            Counter = 0;
+            MaxCollisions = 3;
+            LastCollisionMeteorit = null;
+            StartTime = DateTime.Now;
+            timer1.Start();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -53,6 +64,9 @@ namespace WindowsFormsApp1
             MoveMeteorit(meteorit3);
 
             CheckCollisions();
+
+            //print out time
+            lblTime.Text = (DateTime.Now - StartTime).ToString();
 
 
         }
@@ -126,7 +140,7 @@ namespace WindowsFormsApp1
                 if (LastCollisionMeteorit == null)
                 {
                     Counter = Counter + 1;
-                    CollisionCounter.Text = Counter.ToString();
+                    lblCollisionCounter.Text = Counter.ToString();
                     LastCollisionMeteorit = foundmeteorit;
                 } 
 
@@ -138,9 +152,17 @@ namespace WindowsFormsApp1
             }
 
             // check max collision limit
-            if (Counter>MaxCollisions)
+            if (Counter>=MaxCollisions)
             {
-              
+                timer1.Stop();
+                if (MessageBox.Show(this, "Game Over", "", MessageBoxButtons.RetryCancel) == DialogResult.Cancel)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                   PrepareStart();
+                }
             }
         }
 
