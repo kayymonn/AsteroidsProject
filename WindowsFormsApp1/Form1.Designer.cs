@@ -92,21 +92,25 @@
             // 
             // lblCollisionCounter
             // 
+            this.lblCollisionCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCollisionCounter.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lblCollisionCounter.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCollisionCounter.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCollisionCounter.Location = new System.Drawing.Point(719, 9);
+            this.lblCollisionCounter.Location = new System.Drawing.Point(728, 9);
             this.lblCollisionCounter.Name = "lblCollisionCounter";
-            this.lblCollisionCounter.Size = new System.Drawing.Size(148, 19);
+            this.lblCollisionCounter.Size = new System.Drawing.Size(148, 39);
             this.lblCollisionCounter.TabIndex = 4;
             this.lblCollisionCounter.Text = "0";
             // 
             // lblTime
             // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.BackColor = System.Drawing.SystemColors.InfoText;
+            this.lblTime.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTime.Location = new System.Drawing.Point(719, 37);
+            this.lblTime.Location = new System.Drawing.Point(728, 59);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(148, 19);
+            this.lblTime.Size = new System.Drawing.Size(148, 29);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "00:00";
             // 

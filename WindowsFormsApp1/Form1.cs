@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
         uint MaxCollisions = 3;
         PictureBox LastCollisionMeteorit = null;
         DateTime StartTime = DateTime.Now;
+        int SpeedPlus = 0;
 
         public Form1()
         {
@@ -45,7 +46,7 @@ namespace WindowsFormsApp1
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
-            private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
 
             if (Keyboard.IsKeyDown(Key.Up))
@@ -66,7 +67,12 @@ namespace WindowsFormsApp1
             CheckCollisions();
 
             //print out time
-            lblTime.Text = (DateTime.Now - StartTime).ToString();
+            TimeSpan timeOffset = (DateTime.Now - StartTime);
+            lblTime.Text = timeOffset.ToString();
+
+            SpeedPlus = (int) (timeOffset.TotalSeconds / 4d);
+
+
 
 
         }
@@ -95,7 +101,7 @@ namespace WindowsFormsApp1
             }
             if (keyData == Keys.Right)
             {
-                if (player.Left > 580)
+                if (player.Left > this.Width )
                     player.Left = -50;
                 else
                     player.Left = player.Left + movement;
@@ -119,7 +125,7 @@ namespace WindowsFormsApp1
             if (pictureBox.Top > maxY)
             {
                 int newX = random.Next(this.Width - pictureBox.Width);
-                int newSpeed = random1.Next(1, 6);
+                int newSpeed = random1.Next(1 + SpeedPlus, 6 + SpeedPlus);
                 pictureBox.Location = new Point(newX, -pictureBox.Height);
                 pictureBox.Tag = newSpeed;
             }
@@ -128,6 +134,7 @@ namespace WindowsFormsApp1
                 int speed = Convert.ToInt32(pictureBox.Tag);
                 pictureBox.Top += speed;
             }
+            
         }
 
         private void CheckCollisions()
