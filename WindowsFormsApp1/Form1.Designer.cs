@@ -96,6 +96,7 @@
             this.CollisionCounter.ForeColor = System.Drawing.SystemColors.Window;
             this.CollisionCounter.Location = new System.Drawing.Point(719, 535);
             this.CollisionCounter.Name = "CollisionCounter";
+            this.CollisionCounter.ReadOnly = true;
             this.CollisionCounter.Size = new System.Drawing.Size(148, 19);
             this.CollisionCounter.TabIndex = 4;
             this.CollisionCounter.Text = "000";

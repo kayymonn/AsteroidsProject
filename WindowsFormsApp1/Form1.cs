@@ -53,6 +53,8 @@ namespace WindowsFormsApp1
             MoveMeteorit(meteorit3);
 
             CheckCollisions();
+
+
         }
         
         private void Proccess (Keys keyData)
@@ -133,6 +135,12 @@ namespace WindowsFormsApp1
             else
             {
                 LastCollisionMeteorit = null;
+            }
+
+            // check max collision limit
+            if (LastCollisionMeteorit != null)
+            {
+
             }
         }
 
