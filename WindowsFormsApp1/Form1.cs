@@ -84,12 +84,12 @@ namespace WindowsFormsApp1
                 if (WindowState == FormWindowState.Normal)
                 {
                     WindowState = FormWindowState.Maximized;
-                    Thread.Sleep(100); // Insert 100 millisecond delay
+                    Thread.Sleep(100);
                 }
                 else
                 {
                     WindowState = FormWindowState.Normal;
-                    Thread.Sleep(100); // Insert 100 millisecond delay
+                    Thread.Sleep(100);
                 }
             }
         }
