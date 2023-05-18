@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,8 @@ namespace WindowsFormsApp1
             MoveMeteorit(meteorit2);
             MoveMeteorit(meteorit3);
 
+            CheckSettings();
+
             CheckCollisions();
 
             //print out time
@@ -72,11 +75,24 @@ namespace WindowsFormsApp1
 
             SpeedPlus = (int) (timeOffset.TotalSeconds / 4d);
 
-
-
-
         }
-        
+
+        private void CheckSettings()
+        {
+            if (Keyboard.IsKeyDown(Key.P))
+            {
+                if (WindowState == FormWindowState.Normal)
+                {
+                    WindowState = FormWindowState.Maximized;
+                    Thread.Sleep(100); // Insert 100 millisecond delay
+                }
+                else
+                {
+                    WindowState = FormWindowState.Normal;
+                    Thread.Sleep(100); // Insert 100 millisecond delay
+                }
+            }
+        }
         private void Proccess (Keys keyData)
         {
             int movement = 10;
