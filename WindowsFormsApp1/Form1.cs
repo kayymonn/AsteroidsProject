@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             LastCollisionMeteorit = null;
             StartTime = DateTime.Now;
             timer1.Start();
+            FormBorderStyle = FormBorderStyle.None;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -85,11 +86,13 @@ namespace WindowsFormsApp1
                 {
                     WindowState = FormWindowState.Maximized;
                     Thread.Sleep(100);
+                    FormBorderStyle = FormBorderStyle.None;
                 }
                 else
                 {
                     WindowState = FormWindowState.Normal;
                     Thread.Sleep(100);
+                    FormBorderStyle = FormBorderStyle.None;
                 }
             }
         }

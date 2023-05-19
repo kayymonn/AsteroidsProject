@@ -49,6 +49,8 @@
             // player
             // 
             this.player.BackColor = System.Drawing.Color.Black;
+            this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.player.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.player.ForeColor = System.Drawing.Color.Black;
             this.player.Image = global::WindowsFormsApp1.Properties.Resources.Player;
             this.player.Location = new System.Drawing.Point(370, 377);
